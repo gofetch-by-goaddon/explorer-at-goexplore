@@ -1,0 +1,32 @@
+<h5 class="mb-3">{{ l.headline }} {{ order.order_number | strip_html }}</h5>
+
+<div class="row">
+	<div class="col-md-6">
+		{% include "order/details" %}
+	</div>
+	<div class="col-md-6">
+		{% include "order/addresses" %}
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		{% include "order/notes" %}
+	</div>
+</div>
+
+{% if shipments.size > 0 %}
+	<div class="row">
+		<div class="col-md-12">
+			{% include "order/shipments" %}
+		</div>
+	</div>
+{% endif %}
+
+{% if order_lines.size > 0 %}
+	<div class="row">
+		<div class="col-md-12">
+			{% include "order/order_lines" %}
+		</div>
+	</div>
+{% endif %}

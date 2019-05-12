@@ -1,0 +1,6 @@
+{% capture address_1_field %}{{ address }}_address_1{% endcapture %}
+{% if order[address_1_field] != nil and order[address_1_field] != "" %}
+	{{ order[address_1_field] | decrypt | strip_html }}
+{% else %}
+	-
+{% endif %}

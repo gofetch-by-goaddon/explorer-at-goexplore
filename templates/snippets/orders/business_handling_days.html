@@ -1,0 +1,22 @@
+{% if shipments[order_id] != nil %}
+	{% for shipment in shipments[order_id] %}
+		{% if shipment.datetime == nil %}
+			<div></div>
+		{% else %}
+			{% if order.datetime == nil or order.datetime > shipment.datetime %}
+				<div>-</div>
+			{% else %}
+				<div>
+					{% assign business_from_date 					= order.datetime | previous_business_day %}
+					{% assign business_days_between_dates = business_from_date | business_days_until: shipment.datetime %}
+					{{ business_days_between_dates }}
+					{% if business_days_between_dates == 1 %}
+						{{ l.business_day }}
+					{% else %}
+						{{ l.business_days }}
+					{% endif %}
+				</div>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+{% endif %}

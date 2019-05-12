@@ -1,0 +1,9 @@
+{% assign headlines = l.headlines[session.controller] %}
+{% if headlines != nil %}
+	{% assign headline = headlines[session.action] %}
+	{% if headline != nil %}
+		<h5 class="mb-3">{{ headline }}</h5>
+	{% endif %}
+{% endif %}
+
+{% yield %}

@@ -1,0 +1,8 @@
+<h5 class="mb-3">{{ l.headlines[klass] }}</h5>
+{% for document in documents %}
+	<p>
+		<a href="/{{ params.locale }}/{{ klass }}/{{ document._id }}">
+			{{ document.name }}
+		</a>
+	</p>
+{% endfor %}

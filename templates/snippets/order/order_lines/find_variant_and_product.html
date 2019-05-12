@@ -1,0 +1,8 @@
+{% if order_line.variant_id != nil %}
+	{% assign variant = variants[order_line.variant_id] %}
+	{% if variant != nil %}
+		{% if variant.product_id != nil %}
+			{% assign product = products[variant.product_id] %}
+		{% endif %}
+	{% endif %}
+{% endif %}

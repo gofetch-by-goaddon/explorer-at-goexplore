@@ -1,0 +1,15 @@
+{
+	"title": {
+		"en": "Countries"
+	},
+	"index": 4,
+	"paths": [
+		{
+			"controller": "countries",
+			"action": "index"
+		},
+		{
+			"controller": "countries"
+		}
+	]
+}

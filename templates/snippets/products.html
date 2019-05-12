@@ -1,0 +1,16 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th width="1">{{ l.headers.sku }}</th>
+			<th>{{ l.headers.name }}</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for product in products %}
+			<tr>
+				<td>{% include "products/sku" %}</td>
+				<td>{% include "products/name" %}</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>

@@ -1,0 +1,24 @@
+{% assign today = "now" | date: "%Y-%m-%d" | parse_date %}
+<table class="table">
+	<thead>
+		<tr>
+			<th width="1">{{ l.headers.order_number }}</th>
+			<th>{{ l.headers.time_since_ordered }}</th>
+			<th>{{ l.headers.time_since_shipped }}</th>
+			<th>{{ l.headers.business_handling_days }}</th>
+			<th>{{ l.headers.state }}</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for order in orders %}
+			{% assign order_id = order._id %}
+			<tr>
+				<td>{% include "orders/order_number" %}</td>
+				<td>{% include "orders/time_since_ordered" %}</td>
+				<td>{% include "orders/time_since_shipped" %}</td>
+				<td>{% include "orders/business_handling_days" %}</td>
+				<td>{% include "orders/state" %}</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>

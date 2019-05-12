@@ -1,0 +1,25 @@
+{
+	"countries": {
+		"klass": "countries",
+		"query": {
+			"company_id": "{{ company_id }}",
+			"_id": "{{ _id }}"
+		},
+		"projection": {
+			"_id": 1,
+			"name": 1,
+			"webshop_id": 1
+		}
+	},
+	"webshops": {
+		"klass": "webshops",
+		"query": {
+			"company_id": "{{ company_id }}",
+			"_id": "{{ _id }}"
+		},
+		"projection": {
+			"_id": 1,
+			"relay_id": 1
+		}
+	}
+}

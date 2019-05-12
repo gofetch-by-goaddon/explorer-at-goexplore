@@ -1,0 +1,98 @@
+<h5 class="mb-3">
+	{{ l.headline }}&nbsp;
+
+	{% if product.name == nil or product.name == "" %}
+		{% assign product_name = l.no_product_name %}
+	{% else %}
+		{% assign product_name = product.name | decrypt | strip_html %}
+	{% endif %}
+
+	{% assign product_url = product.url | decrypt | strip_html %}
+	{% assign https_www 		= product_url | slice: 0, 5 %}
+	{% if https_www != "https" %}
+		{% if https_www == "www." %}
+			{% capture product_url %}https://{{ product_url }}{% endcapture %}
+		{% else %}
+			{% assign first_char = product_url | slice: 0 %}
+			{% if first_char != "/" %}
+				{% capture product_url %}/{{ product_url }}{% endcapture %}
+			{% endif %}
+			{% capture product_url %}https://{{ account.website | strip_html }}{{ product_url }}{% endcapture %}
+		{% endif %}
+	{% endif %}
+
+	{% if product_url != nil %}
+		<a href="{{ product_url }}" target="_blank">
+			{{ product_name }} <i class="fas fa-external-link-alt"></i>
+		</a>
+	{% else %}
+		{{ name }}
+	{% endif %}
+</h5>
+
+<table>
+	<tbody>
+		<tr>
+			<td class="pr-3">
+				<b>{{ l.product_headers.sku }}:</b>
+			</td>
+			<td>
+				{% include "product/details/sku" %}
+			</td>
+		</tr>
+		{% if product.price != nil %}
+			<tr>
+				<td class="pr-3">
+					<b>{{ l.product_headers.price }}:</b>
+				</td>
+				<td>
+					{% include "product/details/price" %}
+				</td>
+			</tr>
+		{% endif %}
+
+		{% if product.offer_price != nil %}
+			<tr>
+				<td class="pr-3">
+					<b>{{ l.product_headers.offer_price }}:</b>
+				</td>
+				<td>
+					{% include "product/details/offer_price" %}
+				</td>
+			</tr>
+		{% endif %}
+	</tbody>
+</table>
+
+{% if product.description != nil and product.description != "" %}
+	<div class="mt-4">
+		{{ product.description | decrypt | strip_html }}
+	</div>
+{% endif %}
+
+{% if product.image_urls.size > 0 %}
+	<div class="row mt-4">
+		{% for image_url in product.image_urls %}
+			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 mb-4"><img src="{{ image_url | decrypt }}" class="img-fluid img-thumbnail"></div>
+		{% endfor %}
+	</div>
+{% endif %}
+
+{% if variants.size > 0 %}
+	<table class="table mt-4">
+		<thead>
+			<tr>
+				<th>{{ l.variant_headers.sku }}</th>
+				<th>{{ l.variant_headers.variations }}</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for variant in variants %}
+				<tr>
+					<td>{% include "product/variants/sku" %}</td>
+					<td>{% include "product/variants/variations" %}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endif %}

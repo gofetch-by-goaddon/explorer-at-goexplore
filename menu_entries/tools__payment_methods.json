@@ -1,0 +1,15 @@
+{
+	"title": {
+		"en": "Payment methods"
+	},
+	"index": 1,
+	"paths": [
+		{
+			"controller": "payment_methods",
+			"action": "index"
+		},
+		{
+			"controller": "payment_methods"
+		}
+	]
+}

@@ -1,0 +1,26 @@
+{% if account != nil %}
+
+	{% assign products_query 	= "products" | db_find: company_id: account._id, _id: params.id %}
+	{% assign product 				= products_query.results.first %}
+
+	{% if product != nil %}
+
+		{% assign variants_query 	= "variants" | db_find: company_id: account._id, product_id: product._id %}
+		{% assign variants 				= variants_query.results %}
+
+		{% assign stock_message_ids = "" %}
+		{% for variant in variants %}
+			{% if variant.stock_message_id != nil %}
+				{% capture stock_message_ids %}{{ stock_message_ids }} {{ variant.stock_message_ids }}{% endcapture %}
+			{% endif %}
+		{% endfor %}
+
+		{% assign stock_message_ids 		= stock_message_ids | strip | split: " " | uniq %}
+		{% assign stock_messages_query 	= "stock_messages" | db_find: company_id: account._id, _ids: stock_message_ids %}
+		{% assign stock_messages 				= stock_messages_query.results %}
+
+		{% include "product" %}
+
+	{% endif %}
+
+{% endif %}

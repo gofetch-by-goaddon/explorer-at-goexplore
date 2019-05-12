@@ -1,0 +1,23 @@
+{% if account != nil %}
+
+	{% assign customers_query = "customers" | db_find: company_id: account._id, _id: params.id %}
+	{% assign customer 				= customers_query.results.first %}
+
+	{% if customer != nil %}
+		<h5 class="mb-3">{{ l.headline }} {{ customer.mail_address | decrypt | strip_html }}</h5>
+
+		{% assign orders_query 		= "orders" | db_find: company_id: account._id, page: params.page, per_page: params.per_page, customer_id: customer._id %}
+		{% assign orders 					= orders_query.results %}
+
+		{% include "orders/find_shipments" %}
+		{% include "orders" %}
+
+		{% assign page 			= orders_query.page %}
+		{% assign per_page 	= orders_query.per_page %}
+		{% assign pages 		= orders_query.pages_count %}
+		{% assign klass 		= "orders" %}
+
+		{% include "pagination" %}
+
+	{% endif %}
+{% endif %}

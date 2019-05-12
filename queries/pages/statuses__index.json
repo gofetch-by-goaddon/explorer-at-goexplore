@@ -1,0 +1,13 @@
+{
+	"statuses": {
+		"klass": "statuses",
+		"query": {
+			"company_id": "{{ company_id }}"
+		},
+		"projection": {
+			"_id": 1,
+			"name": 1,
+			"webshop_id": 1
+		}
+	}
+}

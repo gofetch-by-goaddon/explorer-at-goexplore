@@ -1,0 +1,6 @@
+{% include "shared/variant_variations" %}
+{% if variations == "" %}
+	{{ l.no_variations }}
+{% else %}
+	{{ variations }}
+{% endif %}

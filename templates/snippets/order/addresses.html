@@ -1,0 +1,37 @@
+<table width="100%">
+	{% assign addresses = "billing shipping" | split: " " %}
+	<thead>
+		<tr>
+			{% for address in addresses %}
+				<th>{{ l.headers[address] }}</th>
+			{% endfor %}
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			{% for address in addresses %}
+				<td>{% include "order/addresses/name" %}</td>
+			{% endfor %}
+		</tr>
+
+		<tr>
+			{% for address in addresses %}
+				<td>{% include "order/addresses/address_1" %}</td>
+			{% endfor %}
+		</tr>
+
+		{% include "order/addresses/address_2" %}
+
+		<tr>
+			{% for address in addresses %}
+				<td>{% include "order/addresses/zip_code_city_state_country" %}</td>
+			{% endfor %}
+		</tr>
+
+		<tr>
+			{% for address in addresses %}
+				<td>{% include "order/addresses/phone" %}</td>
+			{% endfor %}
+		</tr>
+	</tbody>
+</table>

@@ -1,0 +1,8 @@
+{% assign phone_field = "phone" %}
+{% capture phone_field %}{{ address }}_{{ phone_field }}{% endcapture %}
+{% if order[phone_field] != nil and order[phone_field] != "" %}
+	{{ l.phone }}:&nbsp;
+	{{ order[phone_field] | decrypt | strip_html }}
+{% else %}
+	-
+{% endif %}

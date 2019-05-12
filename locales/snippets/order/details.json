@@ -1,0 +1,12 @@
+{
+	"en": {
+		"headers": {
+			"datetime": "Date",
+			"payment_method": "Payment",
+			"delivery_method": "Delivery",
+			"state": "Status",
+			"mail_address": "Customer",
+			"price": "Price"
+		}
+	}
+}

@@ -1,0 +1,17 @@
+{% capture name_field %}{{ address }}_name{% endcapture %}
+{% if order[name_field] != nil and order[name_field] != "" %}
+	{{ order[name_field] | decrypt | strip_html }}
+{% else %}
+	{% capture first_name_field %}{{ address }}_first_name{% endcapture %}
+	{% capture first_name %}{{ order[first_name_field] | decrypt }}{% endcapture %}
+
+	{% capture last_name_field %}{{ address }}_last_name{% endcapture %}
+	{% capture last_name %}{{ order[last_name_field] | decrypt }}{% endcapture %}
+
+	{% if first_name != "" or last_name != "" %}
+		{{ first_name | strip_html }} {{ last_name | strip_html }}
+	{% else %}
+		-
+	{% endif %}
+
+{% endif %}

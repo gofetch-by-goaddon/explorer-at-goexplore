@@ -1,0 +1,20 @@
+{
+	"shipments": {
+		"klass": "shipments",
+		"query": {
+			"company_id" : "{{ company_id }}",
+			"order_id" : {"$in": "{{ order_ids }}"}
+		},
+		"projection": {
+			"_id": 1,
+			"order_id": 1,
+			"datetime": 1,
+			"courier_custody_datetime": 1,
+			"tracking_number": 1,
+			"delivered_datetime": 1
+		},
+		"sort": {
+			"datetime_first": -1
+		}
+	}
+}

@@ -1,0 +1,22 @@
+{% if order.billing_address_2 != nil and order.billing_address_2 != "" %}
+	{% assign billing_address_2 = order.billing_address_2 | decrypt %}
+{% else %}
+	{% assign billing_address_2 = "-" %}
+{% endif %}
+
+{% if order.shipping_address_2 != nil and order.shipping_address_2 != "" %}
+	{% assign shipping_address_2 = order.shipping_address_2 | decrypt %}
+{% else %}
+	{% assign shipping_address_2 = "-" %}
+{% endif %}
+
+{% if billing_address_2 != "-" or shipping_address_2 != "-" %}
+	<tr>
+		<td>
+			{{ billing_address_2 | strip_html }}
+		</td>
+		<td>
+			{{ shipping_address_2 | strip_html }}
+		</td>
+	</tr>
+{% endif %}

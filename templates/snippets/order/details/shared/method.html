@@ -1,0 +1,12 @@
+{% if method != nil %}
+	<a href="/{{ params.locale }}/{{ klass }}/{{ method._id }}">
+		{% if method.name != nil %}
+			{{ method.name | strip_html }}
+		{% else %}
+			{{ method.remote_id | strip_html }}
+		{% endif %}
+	</a>
+	{% if method_price != nil %}
+		&nbsp;({{ method_price | round: 2 | replace: ".", l.price_delimiter }} {{ order.currency | strip_html }})
+	{% endif %}
+{% endif %}

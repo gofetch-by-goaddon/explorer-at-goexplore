@@ -1,0 +1,9 @@
+{
+	"en": {
+		"headers": {
+			"datetime": "PARCEL SHIPPED",
+			"courier": "COURIER",
+			"tracking_number": "TRACKING NUMBER"
+		}
+	}
+}

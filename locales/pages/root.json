@@ -1,0 +1,12 @@
+{
+	"en": {
+		"headlines": {
+			"orders": {
+				"index": "Orders"
+			},
+			"products": {
+				"index": "Products"
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+{% if last_datetime != nil and last_datetime > webshop_created_datetime %}
+	{% if webshop_created_datetime > stock_movement.datetime %}
+		<tr>
+			<td colspan="4">
+				{{ l.webshop_created }}
+			</td>
+			<td>
+				<span title="{{ webshop_created_datetime | i18n_l: 'wday_date_hours_minutes' | capitalize }}">
+					{{ webshop_created_datetime | time_distance_in_words: now }} {{ l.ago }}
+				</span>
+			</td>
+		</tr>
+	{% endif %}
+{% endif %}

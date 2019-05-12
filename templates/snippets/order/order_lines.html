@@ -1,0 +1,24 @@
+{% assign max_name_chars 				= 50 %}
+{% assign max_variations_chars 	= 20 %}
+
+<table class="table mt-5">
+	<thead>
+		<tr>
+			<th>{{ l.headers.quantity }}</th>
+			<th>{{ l.headers.product_name }}</th>
+			<th>{{ l.headers.price }}</th>
+			<th>{{ l.headers.variations }}</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for order_line in order_lines %}
+			{% include "order/order_lines/find_variant_and_product" %}
+			<tr>
+				<td>{% include "order/order_lines/quantity" %}</td>
+				<td>{% include "order/order_lines/product_name" %}</td>
+				<td>{% include "order/order_lines/price" %}</td>
+				<td>{% include "order/order_lines/variant_variations" %}</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>

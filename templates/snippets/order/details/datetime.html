@@ -1,0 +1,5 @@
+{% if order.datetime == nil %}
+	{{ l.payment_pending }}
+{% else %}
+	{{ order.datetime | i18n_l: 'wday_date_hours_minutes' | capitalize }}
+{% endif %}
