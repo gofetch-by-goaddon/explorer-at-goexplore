@@ -4,7 +4,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
 
 # Index recommendations
 
-### Used by countries\__show, delivery_methods\__show, payment_methods\__show, stock_messages\__show, statuses\__show, variants\__show
+#### Used by countries\__show, delivery_methods\__show, payment_methods\__show, stock_messages\__show, statuses\__show, variants\__show
 
 ```json
 {
@@ -20,7 +20,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
 }
 ```
 
-### Used by countries\__index, orders\__show
+#### Used by countries\__index, orders\__show
 
 ```json
 {
@@ -36,7 +36,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
 }
 ```
 
-### Used by countries\__show
+#### Used by countries\__show
 
 ```json
 {
@@ -52,7 +52,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
 }
 ```
 
-### Used by customers\__show
+#### Used by customers\__show
 
 ```json
 {
@@ -68,7 +68,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
 }
 ```
 
-### Used by customers\__show
+#### Used by customers\__show
 
 ```json
 {
@@ -85,7 +85,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
 }
 ```
 
-### Used by delivery_methods\__index
+#### Used by delivery_methods\__index
 
 ```json
 {
@@ -101,7 +101,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
 }
 ```
 
-### Used by delivery_methods\__show, orders\__show
+#### Used by delivery_methods\__show, orders\__show
 
 ```json
 {
@@ -117,7 +117,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
 }
 ```
 
-### Used by payment_methods\__show, orders\__show
+#### Used by payment_methods\__show, orders\__show
 
 ```json
 {
@@ -133,7 +133,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
 }
 ```
 
-### Used by statuses\__show, orders\__show
+#### Used by statuses\__show, orders\__show
 
 ```json
 {
@@ -149,7 +149,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
 }
 ```
 
-### Used by orders\__index
+#### Used by orders\__index
 
 ```json
 {
@@ -165,7 +165,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
 }
 ```
 
-### Used by orders\__show, variants\__show
+#### Used by orders\__show, variants\__show
 
 ```json
 {
@@ -181,7 +181,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
 }
 ```
 
-### Used by orders\__show
+#### Used by orders\__show
 
 ```json
 {
@@ -198,7 +198,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
 }
 ```
 
-### Used by orders\__show
+#### Used by orders\__show
 
 ```json
 {
@@ -215,7 +215,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
 }
 ```
 
-### Used by orders\__show, variants\__show
+#### Used by orders\__show, variants\__show
 
 ```json
 {
@@ -231,7 +231,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
 }
 ```
 
-### Used by orders\__show, products\__show, variants\__show
+#### Used by orders\__show, products\__show, variants\__show
 
 ```json
 {
@@ -247,7 +247,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
 }
 ```
 
-### Used by payment_methods\__index
+#### Used by payment_methods\__index
 
 ```json
 {
@@ -263,7 +263,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
 }
 ```
 
-### Used by products\__index
+#### Used by products\__index
 
 ```json
 {
@@ -279,7 +279,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
 }
 ```
 
-### Used by products\__show
+#### Used by products\__show
 
 ```json
 {
@@ -296,7 +296,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
 }
 ```
 
-### Used by products\__show, stock_messages\__show, variants\__show
+#### Used by products\__show, stock_messages\__show, variants\__show
 
 ```json
 {
@@ -312,7 +312,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
 }
 ```
 
-### Used by statuses\__index
+#### Used by statuses\__index
 
 ```json
 {
@@ -328,7 +328,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
 }
 ```
 
-### Used by stock_messages\__index
+#### Used by stock_messages\__index
 
 ```json
 {
@@ -344,7 +344,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
 }
 ```
 
-### Used by variants\__show
+#### Used by variants\__show
 
 ```json
 {
