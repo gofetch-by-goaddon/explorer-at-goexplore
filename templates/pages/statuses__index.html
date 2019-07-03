@@ -1,9 +1,5 @@
-{% if account != nil %}
+{% assign statuses_query 	= "statuses" | db_find: company_id: account._id %}
+{% assign klass 					= "statuses" %}
+{% assign documents 			= statuses_query.results %}
 
-	{% assign statuses_query 	= "statuses" | db_find: company_id: account._id %}
-	{% assign klass 					= "statuses" %}
-	{% assign documents 			= statuses_query.results %}
-
-	{% include "shared/tools" %}
-
-{% endif %}
+{% include "shared/tools" %}

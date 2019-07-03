@@ -1,5 +1,6 @@
 {
 	"en": {
+		"headline": "Products",
 		"headers": {
 			"sku": "SKU",
 			"name": "Name"

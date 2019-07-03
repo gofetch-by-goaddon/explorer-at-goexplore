@@ -1,9 +1,5 @@
-{% if account != nil %}
+{% assign delivery_methods_query 	= "delivery_methods" | db_find: company_id: account._id %}
+{% assign klass 									= "delivery_methods" %}
+{% assign documents 							= delivery_methods_query.results %}
 
-	{% assign delivery_methods_query 	= "delivery_methods" | db_find: company_id: account._id %}
-	{% assign klass 									= "delivery_methods" %}
-	{% assign documents 							= delivery_methods_query.results %}
-
-	{% include "shared/tools" %}
-
-{% endif %}
+{% include "shared/tools" %}

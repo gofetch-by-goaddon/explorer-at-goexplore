@@ -1,5 +1,6 @@
 {
 	"en": {
+		"headline": "Orders",
 		"headers": {
 			"order_number": "ORDER",
 			"time_since_ordered": "ORDERED",

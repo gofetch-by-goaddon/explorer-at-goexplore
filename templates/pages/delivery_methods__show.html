@@ -1,12 +1,8 @@
-{% if account != nil %}
+{% assign delivery_methods_query 	= "delivery_methods" | db_find: company_id: account._id, _id: params.id %}
+{% assign delivery_method 				= delivery_methods_query.results.first %}
 
-	{% assign delivery_methods_query 	= "delivery_methods" | db_find: company_id: account._id, _id: params.id %}
-	{% assign delivery_method 				= delivery_methods_query.results.first %}
-
-	{% if delivery_method != nil %}
-		{% assign webshops_query 	= "webshops" | db_find: company_id: account._id, _id: delivery_method.webshop_id %}
-		{% assign webshop 				= webshops_query.results.first %}
-		{% include "delivery_method" %}
-	{% endif %}
-
+{% if delivery_method != nil %}
+	{% assign webshops_query 	= "webshops" | db_find: company_id: account._id, _id: delivery_method.webshop_id %}
+	{% assign webshop 				= webshops_query.results.first %}
+	{% include "delivery_method" %}
 {% endif %}
