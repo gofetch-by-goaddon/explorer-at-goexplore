@@ -1,6 +1,6 @@
 {% assign order_ids = "" %}
 
-{% for order in orders.results %}
+{% for order in orders %}
 	{% capture order_ids %}{{ order_ids }} {{ order._id }}{% endcapture %}
 {% endfor %}
 
