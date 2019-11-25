@@ -1,6 +1,6 @@
 {% assign stock_message_id = stock_message_ids[counter] %}
 {% if stock_message_id != "nil" %}
-	<a href="/{{ params.locale }}/stock_messages/{{ stock_message_id }}">
+	<a href="{{ 'stock_messages__show' | path_for: id: stock_message_id }}">
 		{{ stock_messages[stock_message_id].name | strip_html }}
 	</a>
 {% endif %}

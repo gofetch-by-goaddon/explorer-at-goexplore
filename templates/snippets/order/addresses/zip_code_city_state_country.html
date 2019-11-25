@@ -26,7 +26,7 @@
 		{% if zip_code_city_state != "" %}
 			{% capture zip_code_city_state %}{{ zip_code_city_state }}, {% endcapture %}
 		{% endif %}
-		{% capture zip_code_city_state %}{{ zip_code_city_state | strip_html }} <a href="/{{ params.locale }}/countries/{{ country._id }}">{{ country.name | strip_html }}</a>{% endcapture %}
+		{% capture zip_code_city_state %}{{ zip_code_city_state | strip_html }} <a href="{{ 'countries__show' | path_for: id: country._id }}">{{ country.name | strip_html }}</a>{% endcapture %}
 	{% endif %}
 {% endif %}
 {% if zip_code_city_state == "" %}

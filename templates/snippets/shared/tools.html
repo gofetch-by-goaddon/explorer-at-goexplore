@@ -1,7 +1,8 @@
 <h5 class="mb-3">{{ l.headlines[klass] }}</h5>
+{% capture document_path %}{{ klass }}__show{% endcapture %}
 {% for document in documents %}
 	<p>
-		<a href="/{{ params.locale }}/{{ klass }}/{{ document._id }}">
+		<a href="{{ document_path | path_for: id: document._id }}">
 			{{ document.name }}
 		</a>
 	</p>

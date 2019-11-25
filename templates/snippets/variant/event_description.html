@@ -1,7 +1,7 @@
 {% if order_line != nil %}
 	{{ l.new_order_1 }}
 	&nbsp;
-	<a href="/{{ params.locale }}/orders/{{ stock_movement._id }}">{{ stock_movement.order_number | strip_html }}</a>
+	<a href="{{ 'orders__show' | path_for: id: stock_movement._id }}">{{ stock_movement.order_number | strip_html }}</a>
 	&nbsp;
 	{{ l.new_order_2 }}
 {% else %}

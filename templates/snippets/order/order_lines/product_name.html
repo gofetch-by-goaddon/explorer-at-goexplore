@@ -26,7 +26,7 @@
 {% endif %}
 {% if main_product_name != nil %}
 	{% if product != nil %}
-		<a href="/{{ params.locale }}/products/{{ product._id }}" title="{{ product_name_title }}">
+		<a href="{{ 'products__show' | path_for: id: product._id }}" title="{{ product_name_title }}">
 			{{ main_product_name | strip_html }}
 		</a>
 	{% else %}

@@ -1,12 +1,14 @@
 {% assign first_page 	= 0 %}
 {% assign last_page 	= pages | minus: 1 | at_least: 0 %}
 {% assign btn_style 	= "min-width: 50px;border-color:#a0a4a9;" %}
+{% capture pagination_path %}{{ klass }}__index{% endcapture %}
 
 <div class="btn-group" role="group" aria-label="pagination">
 	{% if page == first_page %}
 		<button type="button" class="btn btn-outline-secondary disabled" style="{{ btn_style }}">{{ l.previous }}</button>
 	{% else %}
-		<a href="/{{ params.locale }}/{{ klass }}?page={{ page | minus: 1 }}&per_page={{ per_page }}" class="btn btn-outline-primary" style="{{ btn_style }}">{{ l.previous }}</a>
+		{% assign prev_page = page | minus: 1 %}
+		<a href="{{ pagination_path | path_for: page: prev_page, per_page: per_page}}" class="btn btn-outline-primary" style="{{ btn_style }}">{{ l.previous }}</a>
 	{% endif %}
 
 	{% assign page_minus_6 			= page | minus: 6 %}
@@ -64,7 +66,7 @@
 			{% if page_i != page_number and dots %}
 				<button type="button" class="btn btn-outline-secondary disabled" style="{{ btn_style }}">...</button>
 			{% else %}
-				<a href="/{{ params.locale }}/{{ klass }}?page={{ page_number }}&per_page={{ per_page }}" class="btn btn-outline-primary" style="{{ btn_style }}">{{ page_number | plus: 1 }}</a>
+				<a href="{{ pagination_path | path_for: page: page_number, per_page: per_page}}" class="btn btn-outline-primary" style="{{ btn_style }}">{{ page_number | plus: 1 }}</a>
 			{% endif %}
 
 		{% endif %}
@@ -73,6 +75,7 @@
 	{% if page == last_page %}
 		<button type="button" class="btn btn-outline-secondary disabled" style="{{ btn_style }}">{{ l.next }}</button>
 	{% else %}
-		<a href="/{{ params.locale }}/{{ klass }}?page={{ page | plus: 1 }}&per_page={{ per_page }}" class="btn btn-outline-primary" style="{{ btn_style }}">{{ l.next }}</a>
+		{% assign next_page = page | plus: 1 %}
+		<a href="{{ pagination_path | path_for: page: next_page, per_page: per_page}}" class="btn btn-outline-primary" style="{{ btn_style }}">{{ l.next }}</a>
 	{% endif %}
 </div>

@@ -1,5 +1,5 @@
 {% if status != nil %}
-	<a href="/{{ params.locale }}/statuses/{{ status._id }}">
+	<a href="{{ 'statuses__show' | path_for: id: status._id }}">
 		{% if status.name != nil %}
 			{{ status.name | strip_html }}
 		{% else %}

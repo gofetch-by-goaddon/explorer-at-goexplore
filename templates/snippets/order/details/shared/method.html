@@ -1,5 +1,6 @@
 {% if method != nil %}
-	<a href="/{{ params.locale }}/{{ klass }}/{{ method._id }}">
+	{% capture method_path %}{{ klass }}__show{% endcapture %}
+	<a href="{{ method_path | path_for: id: method._id }}">
 		{% if method.name != nil %}
 			{{ method.name | strip_html }}
 		{% else %}

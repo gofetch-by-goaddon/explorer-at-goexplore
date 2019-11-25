@@ -1,5 +1,6 @@
 <h5 class="mb-3">
-	{{ l.headlines[klass] }} {{ l.headline_2 }} <a href="/{{ params.locale }}/integrations#action=auths__new&relay_id={{ webshop.relay_id }}&webshop_id={{ webshop._id }}">{{ document.webshop_id }}</a>
+	{% capture anchor %}action=auths__new&relay_id={{ webshop.relay_id }}&webshop_id={{ webshop._id }}{% endcapture %}
+	{{ l.headlines[klass] }} {{ l.headline_2 }} <a href="{{ 'integrations__index' | path_for: anchor: anchor }}">{{ document.webshop_id }}</a>
 </h5>
 
 <table class="table">
