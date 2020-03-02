@@ -70,14 +70,6 @@
 	</div>
 {% endif %}
 
-{% if product.image_urls.size > 0 %}
-	<div class="row mt-4">
-		{% for image_url in product.image_urls %}
-			<p>{{ image_url | decrypt }}</p>
-		{% endfor %}
-	</div>
-{% endif %}
-
 {% if variants.size > 0 %}
 	<table class="table mt-4">
 		<thead>
