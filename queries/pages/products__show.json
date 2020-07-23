@@ -8,6 +8,7 @@
 		"projection": {
 			"_id": 1,
 			"sku": 1,
+			"sku_2": 1,
 			"name": 1,
 			"description": 1,
 			"price": 1,

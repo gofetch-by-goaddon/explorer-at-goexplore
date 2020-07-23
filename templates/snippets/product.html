@@ -40,6 +40,16 @@
 				{% include "product/details/sku" %}
 			</td>
 		</tr>
+		{% if product.sku_2 != nil %}
+			<tr>
+				<td class="pr-3">
+					<b>{{ l.product_headers.sku_2 }}:</b>
+				</td>
+				<td>
+					{% include "product/details/sku_2" %}
+				</td>
+			</tr>
+		{% endif %}
 		{% if product.price != nil %}
 			<tr>
 				<td class="pr-3">
