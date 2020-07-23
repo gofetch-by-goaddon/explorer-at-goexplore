@@ -20,6 +20,39 @@
 	{% endif %}
 </h5>
 
+<table>
+	<tbody>
+		<tr>
+			<td class="pr-3">
+				<b>{{ l.variant_headers.sku }}:</b>
+			</td>
+			<td>
+				{% include "variant/details/sku" %}
+			</td>
+		</tr>
+		{% if variant.sku_2 != nil %}
+			<tr>
+				<td class="pr-3">
+					<b>{{ l.variant_headers.sku_2 }}:</b>
+				</td>
+				<td>
+					{% include "variant/details/sku_2" %}
+				</td>
+			</tr>
+		{% endif %}
+		{% if variant.ean != nil %}
+			<tr>
+				<td class="pr-3">
+					<b>{{ l.variant_headers.ean }}:</b>
+				</td>
+				<td>
+					{% include "variant/details/ean" %}
+				</td>
+			</tr>
+		{% endif %}
+	</tbody>
+</table>
+
 {% if variant.stock_movements != nil %}
 	<table class="table">
 		<thead>

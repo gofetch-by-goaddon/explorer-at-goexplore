@@ -8,6 +8,8 @@
 		"projection": {
 			"_id": 1,
 			"sku": 1,
+			"sku_2": 1,
+			"ean": 1,
 			"webshop_id": 1,
 			"product_id": 1,
 			"variations": 1,
