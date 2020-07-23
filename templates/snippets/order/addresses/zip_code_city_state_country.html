@@ -13,7 +13,7 @@
 		{% if field_name == "state" %}
 			{% assign field_result = order[field] %}
 		{% else %}
-			{% assign field_result = order[field] | decrypt %}
+			{% assign field_result = order[field] | decrypt | strip_html %}
 		{% endif %}
 		{% capture zip_code_city_state %}{{ zip_code_city_state }} {{ field_result }}{% endcapture %}
 	{% endif %}

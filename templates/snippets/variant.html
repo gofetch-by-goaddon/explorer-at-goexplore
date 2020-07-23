@@ -1,5 +1,5 @@
 <h5 class="mb-3">
-	{{ l.headline_1 }} {{ variant.sku | decrypt }}
+	{{ l.headline_1 }}
 	{% if product != nil %}
 		{% if product.name == nil or product.name == "" %}
 			{% assign product_name = l.no_product_name %}
@@ -13,7 +13,7 @@
 		{% if variations != "" %}
 			{% capture variations %}{{ variations }}, {% endcapture %}
 		{% endif %}
-		{% capture variations %}{{ variations }}{{ variation[0] | decrypt }}: {{ variation[1] | decrypt }}{% endcapture %}
+		{% capture variations %}{{ variations }}{{ variation[0] | decrypt | strip_html }}: {{ variation[1] | decrypt | strip_html }}{% endcapture %}
 	{% endfor %}
 	{% if variations != "" %}
 		&nbsp;({{ variations | strip_html }})
