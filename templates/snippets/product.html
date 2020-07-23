@@ -40,7 +40,7 @@
 				{% include "product/details/sku" %}
 			</td>
 		</tr>
-		{% if product.sku_2 != nil %}
+		{% if product.sku_2 != nil and product.sku_2 != "" %}
 			<tr>
 				<td class="pr-3">
 					<b>{{ l.product_headers.sku_2 }}:</b>

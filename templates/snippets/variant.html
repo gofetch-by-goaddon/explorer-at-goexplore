@@ -30,7 +30,7 @@
 				{% include "variant/details/sku" %}
 			</td>
 		</tr>
-		{% if variant.sku_2 != nil %}
+		{% if variant.sku_2 != nil and variant.sku_2 != "" %}
 			<tr>
 				<td class="pr-3">
 					<b>{{ l.variant_headers.sku_2 }}:</b>
@@ -40,7 +40,7 @@
 				</td>
 			</tr>
 		{% endif %}
-		{% if variant.ean != nil %}
+		{% if variant.ean != nil and variant.ean != "" %}
 			<tr>
 				<td class="pr-3">
 					<b>{{ l.variant_headers.ean }}:</b>
