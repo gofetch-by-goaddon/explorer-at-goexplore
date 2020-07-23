@@ -3,6 +3,11 @@
 		"headline_1": "Variant",
 		"headline_2": "of",
 		"no_product_name": "without name",
+		"variant_headers": {
+			"sku": "SKU",
+			"sku_2": "SKU 2",
+			"ean": "EAN"
+		},
 		"headers": {
 			"event_description": "EVENT",
 			"event_stock": "STOCK",
