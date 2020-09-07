@@ -18,37 +18,14 @@
 		},
 		"pagination": {
 			"page": 0,
-			"per_page": 20
+			"per_page": 10
 		},
 		"projection": {
 			"_id": 1,
-			"payment_method_id": 1,
-			"delivery_method_id": 1,
 			"order_number": 1,
-			"mail_address": 1,
 			"datetime": 1,
 			"datetime_first": 1,
-			"billing_name": 1,
-			"billing_first_name": 1,
-			"billing_last_name": 1,
-			"billing_address_1": 1,
-			"billing_address_2": 1,
-			"billing_zip_code": 1,
-			"billing_city": 1,
-			"billing_state": 1,
-			"billing_phone": 1,
-			"shipping_name": 1,
-			"shipping_first_name": 1,
-			"shipping_last_name": 1,
-			"shipping_address_1": 1,
-			"shipping_address_2": 1,
-			"shipping_zip_code": 1,
-			"shipping_city": 1,
-			"shipping_state": 1,
-			"shipping_phone": 1,
-			"state": 1,
-			"company_note": 1,
-			"customer_note": 1
+			"state": 1
 		},
 		"sort": {
 			"datetime_first": -1

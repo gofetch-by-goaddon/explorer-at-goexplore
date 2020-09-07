@@ -105,11 +105,10 @@
 
 			{% assign stock_message_ids 				= stock_message_ids | strip | split: " " | reverse %}
 			{% assign stocks 										= stocks | strip | split: " " | reverse %}
-
+			{% assign stock_movements 					= stock_movements | reverse %}
 			{% assign now 											= "now" | date: "%Y-%m-%d %H:%M" | parse_time %}
 			{% assign webshop_created_datetime 	= webshop._id | _id_to_datetime %}
 			{% assign last_datetime 						= nil %}
-			{% assign stock_movements 					= stock_movements | reverse %}
 			{% assign counter 									= 0 %}
 
 			{% for stock_movement in stock_movements %}
@@ -118,7 +117,6 @@
 					{% include "variant/webshop_created" %}
 
 					{% assign last_datetime 		= stock_movement.datetime %}
-
 					{% assign stock_message_id 	= nil %}
 
 					{% if stock_movement.order_number == nil %}

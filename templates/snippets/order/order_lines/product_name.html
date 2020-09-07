@@ -1,14 +1,14 @@
 {% assign order_line_product_name = order_line.product_name | decrypt | strip_html %}
 {% if product == nil %}
 	{% assign product_name = nil %}
-{% else %}	
+{% else %}
 	{% assign product_name = product.name | decrypt | strip_html %}
 {% endif %}
 
 {% if order_line_product_name != nil and product_name != nil and order_line_product_name != product_name %}
 	{% assign main_product_name 	= order_line_product_name | truncate: max_name_chars %}
 	{% assign sub_product_name 		= product_name | truncate: max_name_chars %}
-	{% capture product_name_title %}{{ l.product_name_mismatch_1 }}: {{ order_line_product_name }}, {{ l.product_name_mismatch_2 }}: {{ product_name }}{% endcapture %}
+	{% capture product_name_title %}{{ l.product_name_mismatch_1 }}: {{ order_line_product_name }}\n{{ l.product_name_mismatch_2 }}: {{ product_name }}{% endcapture %}
 {% else %}
 	{% if order_line_product_name != nil %}
 		{% assign chosen_product_name = order_line_product_name %}

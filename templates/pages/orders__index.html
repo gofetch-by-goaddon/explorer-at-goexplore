@@ -4,9 +4,9 @@
 {% include "orders/find_shipments" %}
 {% include "orders" %}
 
-{% assign page 			= orders_query.page %}
-{% assign per_page 	= orders_query.per_page %}
-{% assign pages 		= orders_query.pages_count %}
-{% assign klass 		= "orders" %}
+{% assign page 			  = orders_query.page %}
+{% assign per_page 	  = orders_query.per_page %}
+{% assign pages_count = orders_query.pages_count %}
+{% assign klass 		  = "orders" %}
 
 {% include "pagination" %}

@@ -2,8 +2,8 @@
 	"shipments": {
 		"klass": "shipments",
 		"query": {
-			"company_id" : "{{ company_id }}",
-			"order_id" : {"$in": "{{ order_ids }}"}
+			"company_id": "{{ company_id }}",
+			"order_id": {"$in": "{{ order_ids }}"}
 		},
 		"projection": {
 			"_id": 1,
