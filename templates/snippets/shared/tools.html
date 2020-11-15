@@ -5,7 +5,8 @@
 		<a href="{{ document_path | path_for: id: document._id }}">
 			{{ document.name }}
       {% if document.remote_id != nil %}
-      &nbsp;({{ document.remote_id }})
+        &nbsp;({{ document.remote_id }})
+      {% endif %}
 		</a>
 	</p>
 {% endfor %}
