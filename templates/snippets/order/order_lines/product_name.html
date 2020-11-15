@@ -14,6 +14,8 @@
 		{% assign chosen_product_name = order_line_product_name %}
 	{% elsif product_name != nil %}
 		{% assign chosen_product_name = product_name %}
+	{% else %}
+		{% assign chosen_product_name = nil %}
 	{% endif %}
 	{% assign sub_product_name = nil %}
 	{% if chosen_product_name != nil and chosen_product_name.size > max_name_chars %}
