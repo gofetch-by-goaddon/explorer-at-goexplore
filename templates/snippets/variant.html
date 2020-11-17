@@ -6,7 +6,7 @@
 		{% else %}
 			{% assign product_name = product.name | decrypt | strip_html %}
 		{% endif %}
-		&nbsp;{{ l.headline_2 }} <a href="{{ 'products__show' | path_for: id: product._id }}">{{ product_name }}</a>
+		&nbsp;{{ l.headline_2 }} <a href="{{ 'products__show' | path_for: id: product._id }}">{{ product_name }}</a>
 	{% endif %}
 	{% assign variations = "" %}
 	{% for variation in variant.variations %}

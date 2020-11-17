@@ -12,6 +12,6 @@
 			{% assign variations_text 	= variations %}
 			{% assign variations_title 	= nil %}
 		{% endif %}
-		<a href="{{ 'variants__show' | path_for: id: variant._id }}" title="{{ variations_title }}">{{ variations_text }}</a>
+		<a href="{{ 'variants__show' | path_for: id: variant._id }}" title="{{ variations_title }}">{{ variations_text }}</a>
 	{% endif %}
 {% endif %}
