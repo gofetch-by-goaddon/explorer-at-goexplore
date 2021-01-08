@@ -1,4 +1,4 @@
-<h5 class="mb-3">
+<h5 class="mb-4">
 	{% capture anchor %}action=auths__new&relay_id={{ webshop.relay_id }}&webshop_id={{ webshop._id }}{% endcapture %}
 	{{ l.headlines[klass] }} {{ l.headline_2 }} <a href="{{ 'integrations__index' | path_for: anchor: anchor }}">{{ webshop._id }}</a>
 </h5>

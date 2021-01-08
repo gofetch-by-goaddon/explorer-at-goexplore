@@ -9,6 +9,9 @@
 		},
 		{
 			"controller": "orders"
+		},
+		{
+			"controller": "customers"
 		}
 	]
 }
