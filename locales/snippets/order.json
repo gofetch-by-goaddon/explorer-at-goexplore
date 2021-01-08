@@ -1,9 +1,5 @@
 {
 	"en": {
-    "headline": {
-      "s1": "View order",
-      "s2": "or",
-      "s3": "return"
-    }
+		"headline": "Order"
 	}
 }
