@@ -2,14 +2,10 @@
 	"title": {
 		"en": "Tools"
 	},
-	"index": 2,
 	"paths": [
 		{
 			"controller": "delivery_methods",
 			"action": "index"
-		},
-		{
-			"controller": "webshops"
 		},
 		{
 			"controller": "stock_messages"

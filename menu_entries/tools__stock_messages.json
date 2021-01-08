@@ -2,7 +2,6 @@
 	"title": {
 		"en": "Stock messages"
 	},
-	"index": 3,
 	"paths": [
 		{
 			"controller": "stock_messages",

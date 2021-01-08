@@ -2,7 +2,6 @@
 	"title": {
 		"en": "Delivery methods"
 	},
-	"index": 0,
 	"paths": [
 		{
 			"controller": "delivery_methods",
