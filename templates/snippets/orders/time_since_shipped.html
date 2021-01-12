@@ -1,7 +1,7 @@
 {% if shipments[order_id] != nil %}
 	{% for shipment in shipments[order_id] %}
 		{% if shipment.datetime != nil %}
-			<p>
+			<div>
 				{% if order.datetime == nil or order.datetime > shipment.datetime %}
 					{{ l.impossible_shipment_datetime }}
 				{% else %}
@@ -11,7 +11,7 @@
 						{% include "orders/shared/time_ago" %}
 					</span>
 				{% endif %}
-			</p>
+			</div>
 		{% endif %}
 	{% endfor %}
 {% endif %}
