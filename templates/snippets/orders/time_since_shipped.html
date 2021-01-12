@@ -1,15 +1,17 @@
 {% if shipments[order_id] != nil %}
 	{% for shipment in shipments[order_id] %}
 		{% if shipment.datetime != nil %}
-			{% if order.datetime == nil or order.datetime > shipment.datetime %}
-				{{ l.impossible_shipment_datetime }}
-			{% else %}
-				<span title="{{ shipment.datetime | i18n_l: 'wday_date' | capitalize }}">
-					{% assign days_since_shipment = shipment.datetime | days_between_dates: today %}
-					{% assign time_ago 						= days_since_shipment | days_to_years_months_days %}
-					{% include "orders/shared/time_ago" %}
-				</span>
-			{% endif %}
+			<p>
+				{% if order.datetime == nil or order.datetime > shipment.datetime %}
+					{{ l.impossible_shipment_datetime }}
+				{% else %}
+					<span title="{{ shipment.datetime | i18n_l: 'wday_date' | capitalize }}">
+						{% assign days_since_shipment = shipment.datetime | days_between_dates: today %}
+						{% assign time_ago 						= days_since_shipment | days_to_years_months_days %}
+						{% include "orders/shared/time_ago" %}
+					</span>
+				{% endif %}
+			</p>
 		{% endif %}
 	{% endfor %}
 {% endif %}
