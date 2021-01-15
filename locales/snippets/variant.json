@@ -13,7 +13,7 @@
 			"event_stock": "STOCK",
 			"event_quantity": "ORDERED",
 			"event_stock_message": "STOCK MESSAGE",
-			"event_datetime": "TIME"
+			"event_created_at": "TIME"
 		}
 	}
 }

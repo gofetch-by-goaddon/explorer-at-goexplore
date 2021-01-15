@@ -1,7 +1,7 @@
 {
 	"en": {
 		"headers": {
-			"datetime": "PARCEL SHIPPED",
+			"created_at": "PARCEL SHIPPED",
 			"courier": "COURIER",
 			"tracking_number": "TRACKING NUMBER"
 		}

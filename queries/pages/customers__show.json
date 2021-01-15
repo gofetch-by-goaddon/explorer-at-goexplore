@@ -23,12 +23,12 @@
 		"projection": {
 			"_id": 1,
 			"order_number": 1,
-			"datetime": 1,
-			"datetime_first": 1,
+			"created_at": 1,
+			"initialized_at": 1,
 			"state": 1
 		},
 		"sort": {
-			"datetime_first": -1
+			"initialized_at": -1
 		}
 	}
 }

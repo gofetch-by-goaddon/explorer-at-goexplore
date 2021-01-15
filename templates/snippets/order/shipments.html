@@ -1,7 +1,7 @@
 <table class="table mt-3">
 	<thead>
 		<tr>
-			<th class="border-bottom-0">{{ l.headers.datetime }}</th>
+			<th class="border-bottom-0">{{ l.headers.created_at }}</th>
 			<th class="border-bottom-0">{{ l.headers.courier }}</th>
 			<th class="border-bottom-0">{{ l.headers.tracking_number }}</th>
 		</tr>
@@ -9,7 +9,7 @@
 	<tbody>
 		{% for shipment in shipments %}
 			<tr>
-				<td>{% include "order/shipments/datetime" %}</td>
+				<td>{% include "order/shipments/created_at" %}</td>
 				<td>{% include "order/shipments/courier" %}</td>
 				<td>{% include "order/shipments/tracking_number" %}</td>
 			</tr>

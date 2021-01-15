@@ -59,7 +59,7 @@
 		},
 		"projection": {
 			"_id": 1,
-			"datetime": 1,
+			"created_at": 1,
 			"order_number": 1
 		}
 	},

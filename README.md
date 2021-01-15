@@ -78,7 +78,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
       "key": {
         "company_id": 1,
         "customer_id": 1,
-        "datetime_first": -1
+        "initialized_at": -1
       }
     }
   ]
@@ -158,7 +158,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
     {
       "key": {
         "company_id": 1,
-        "datetime_first": -1
+        "initialized_at": -1
       }
     }
   ]
@@ -191,7 +191,7 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
       "key": {
         "company_id": 1,
         "order_id": 1,
-        "datetime": 1
+        "created_at": 1
       }
     }
   ]

@@ -61,19 +61,19 @@
 				<th class="border-bottom-0">{{ l.headers.event_quantity }}</th>
 				<th class="border-bottom-0">{{ l.headers.event_stock }}</th>
 				<th class="border-bottom-0">{{ l.headers.event_stock_message }}</th>
-				<th class="border-bottom-0">{{ l.headers.event_datetime }}</th>
+				<th class="border-bottom-0">{{ l.headers.event_created_at }}</th>
 			</tr>
 		</thead>
 		<tbody>
 
-			{% assign stock_movements 					= variant.stock_movements | concat: orders | sort: "datetime" %}
+			{% assign stock_movements 					= variant.stock_movements | concat: orders | sort: "created_at" %}
 			{% assign stock_message_ids 				= "" %}
 			{% assign stock_message_id 					= nil %}
 			{% assign stocks 										= "" %}
 			{% assign stock 										= nil %}
 
 			{% for stock_movement in stock_movements %}
-				{% if stock_movement.datetime != nil %}
+				{% if stock_movement.created_at != nil %}
 
 					{% if stock_movement.order_number == nil %}
 
@@ -103,20 +103,20 @@
 				{% endif %}
 			{% endfor %}
 
-			{% assign stock_message_ids 				= stock_message_ids | strip | split: " " | reverse %}
-			{% assign stocks 										= stocks | strip | split: " " | reverse %}
-			{% assign stock_movements 					= stock_movements | reverse %}
-			{% assign now 											= "now" | date: "%Y-%m-%d %H:%M" | parse_time %}
-			{% assign webshop_created_datetime 	= webshop._id | _id_to_datetime %}
-			{% assign last_datetime 						= nil %}
-			{% assign counter 									= 0 %}
+			{% assign stock_message_ids 	= stock_message_ids | strip | split: " " | reverse %}
+			{% assign stocks 							= stocks | strip | split: " " | reverse %}
+			{% assign stock_movements 		= stock_movements | reverse %}
+			{% assign now 								= "now" | date: "%Y-%m-%d %H:%M" | parse_time %}
+			{% assign webshop_created_at 	= webshop._id | _id_to_datetime %}
+			{% assign last_datetime 			= nil %}
+			{% assign counter 						= 0 %}
 
 			{% for stock_movement in stock_movements %}
-				{% if stock_movement.datetime != nil %}
+				{% if stock_movement.created_at != nil %}
 
 					{% include "variant/webshop_created" %}
 
-					{% assign last_datetime 		= stock_movement.datetime %}
+					{% assign last_datetime 		= stock_movement.created_at %}
 					{% assign stock_message_id 	= nil %}
 
 					{% if stock_movement.order_number == nil %}
@@ -130,7 +130,7 @@
 						<td>{% include "variant/event_quantity" %}</td>
 						<td>{% include "variant/event_stock" %}</td>
 						<td>{% include "variant/event_stock_message" %}</td>
-						<td>{% include "variant/event_datetime" %}</td>
+						<td>{% include "variant/event_created_at" %}</td>
 					</tr>
 					{% assign counter = counter | plus: 1 %}
 				{% endif %}

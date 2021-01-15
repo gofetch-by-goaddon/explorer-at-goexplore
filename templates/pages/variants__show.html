@@ -4,7 +4,9 @@
 {% if variant != nil %}
 	{% assign products_query 				= "products" | db_find: company_id: account._id, _id: variant.product_id %}
 	{% assign product 							= products_query.results.first %}
+
 	{% if variant.stock_movements != nil %}
+
 		{% assign webshops_query 				= "webshops" | db_find: company_id: account._id, _id: variant.webshop_id %}
 		{% assign webshop 							= webshops_query.results.first %}
 
