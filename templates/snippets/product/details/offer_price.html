@@ -1,1 +1,1 @@
-{{ product.offer_price | round: 2 | replace: ".", l.price_delimiter }} {{ product.currency | strip_html }}
+{{ product.offer_price | round: 2 | replace: ".", l.price_delimiter }} {{ product.currency | decrypt | strip_html }}
