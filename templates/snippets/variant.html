@@ -107,7 +107,7 @@
 			{% assign stocks 							= stocks | strip | split: " " | reverse %}
 			{% assign stock_movements 		= stock_movements | reverse %}
 			{% assign now 								= "now" | in_time_zone: project.secrets.timezone %}
-			{% assign webshop_created_at 	= webshop._id | _id_to_datetime | in_time_zone: project.secrets.timezone %}
+			{% assign webshop_created_at 	= webshop._id | generation_time | in_time_zone: project.secrets.timezone %}
 			{% assign last_datetime 			= nil %}
 			{% assign counter 						= 0 %}
 
