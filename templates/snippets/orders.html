@@ -1,4 +1,4 @@
-{% assign today = "now" | date: "%Y-%m-%d" | parse_date %}
+{% assign today = "now" | in_time_zone: project.secrets.timezone %}
 <table class="table">
 	<thead>
 		<tr>
