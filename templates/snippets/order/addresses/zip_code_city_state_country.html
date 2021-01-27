@@ -10,12 +10,7 @@
 				{% capture zip_code_city_state %}{{ zip_code_city_state }}, {% endcapture %}
 			{% endif %}
 		{% endif %}
-		{% if field_name == "state" %}
-			{% assign field_result = order[field] %}
-		{% else %}
-			{% assign field_result = order[field] | decrypt | strip_html %}
-		{% endif %}
-		{% capture zip_code_city_state %}{{ zip_code_city_state }} {{ field_result }}{% endcapture %}
+		{% capture zip_code_city_state %}{{ zip_code_city_state }} {{ order[field] | decrypt | strip_html }}{% endcapture %}
 	{% endif %}
 {% endfor %}
 {% capture country_field %}{{ address }}_country_id{% endcapture %}
