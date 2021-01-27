@@ -106,8 +106,8 @@
 			{% assign stock_message_ids 	= stock_message_ids | strip | split: " " | reverse %}
 			{% assign stocks 							= stocks | strip | split: " " | reverse %}
 			{% assign stock_movements 		= stock_movements | reverse %}
-			{% assign now 								= "now" | in_time_zone: project.secrets.timezone %}
-			{% assign webshop_created_at 	= webshop._id | generation_time | in_time_zone: project.secrets.timezone %}
+			{% assign now 								= "now" | in_time_zone %}
+			{% assign webshop_created_at 	= webshop._id | generation_time | in_time_zone %}
 			{% assign last_datetime 			= nil %}
 			{% assign counter 						= 0 %}
 
@@ -116,7 +116,7 @@
 
 					{% include "variant/webshop_created" %}
 
-					{% assign last_datetime 		= stock_movement.created_at | in_time_zone: project.secrets.timezone %}
+					{% assign last_datetime 		= stock_movement.created_at | in_time_zone %}
 					{% assign stock_message_id 	= nil %}
 
 					{% if stock_movement.order_number == nil %}

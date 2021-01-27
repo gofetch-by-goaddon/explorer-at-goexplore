@@ -1,1 +1,1 @@
-{{ shipment.created_at | in_time_zone: project.secrets.timezone | i18n_l: 'wday_date' | capitalize }}
+{{ shipment.created_at | in_time_zone | i18n_l: 'wday_date' | capitalize }}
