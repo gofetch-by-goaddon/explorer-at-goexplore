@@ -1,5 +1,5 @@
 {% if last_datetime != nil and last_datetime > webshop_created_at %}
-	{% if webshop_created_at > stock_movement.datetime %}
+	{% if webshop_created_at > stock_movement.created_at %}
 		<tr>
 			<td colspan="4">
 				{{ l.webshop_created }}
