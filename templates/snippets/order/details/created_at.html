@@ -1,5 +1,7 @@
 {% if order.created_at == nil %}
 	{{ l.payment_pending }}
 {% else %}
-	{{ order.created_at | i18n_l: 'wday_date_hours_minutes' | capitalize }}
+  <p>1: {{ order.created_at }}</p>
+  <p>2: {{ order.created_at | in_time_zone: project.secrets.timezone }}</p>
+	{{ order.created_at | in_time_zone: project.secrets.timezone | i18n_l: 'wday_date_hours_minutes' | capitalize }}
 {% endif %}
