@@ -3,5 +3,5 @@
 	{% if variations != "" %}
 		{% capture variations %}{{ variations }}, {% endcapture %}
 	{% endif %}
-	{% capture variations %}{{ variations }}{{ variation[0] | decrypt | strip_html }}: {{ variation[1] | decrypt | strip_html }}{% endcapture %}
+	{% capture variations %}{{ variations }}{{ variation.type | decrypt | strip_html }}: {{ variation.value | decrypt | strip_html }}{% endcapture %}
 {% endfor %}
