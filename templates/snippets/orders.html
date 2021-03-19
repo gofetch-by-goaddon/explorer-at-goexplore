@@ -13,7 +13,7 @@
 		{% for order in orders %}
 			{% assign order_id = order._id %}
 			<tr>
-				<td>{% include "orders/order_number" %}</td>
+				<td class="text-nowrap">{% include "orders/order_number" %}</td>
 				<td>{% include "orders/time_since_ordered" %}</td>
 				<td>{% include "orders/time_since_shipped" %}</td>
 				<td>{% include "orders/business_handling_days" %}</td>
