@@ -215,6 +215,23 @@ A comprehensive user interface for Goexplore. Enables webshop owners to navigate
 }
 ```
 
+#### Used by orders\__show
+
+```json
+{
+  "klass": "invoices",
+  "indexes": [
+    {
+      "key": {
+        "company_id": 1,
+        "order_id": 1,
+        "created_at": 1
+      }
+    }
+  ]
+}
+```
+
 #### Used by orders\__show, variants\__show
 
 ```json

@@ -1,0 +1,12 @@
+{
+	"en": {
+		"headers": {
+			"created_at": "Parcel shipped",
+			"remote_id": "ID",
+			"amount": "Amount",
+			"captured_amount": "Captured",
+			"paid_amount": "Paid",
+			"order_lines": "Order lines"
+		}
+	}
+}

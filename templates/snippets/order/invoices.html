@@ -1,0 +1,24 @@
+<table class="table mt-3">
+	<thead>
+		<tr>
+			<th class="border-bottom-0">{{ l.headers.created_at }}</th>
+			<th class="border-bottom-0">{{ l.headers.remote_id }}</th>
+			<th class="border-bottom-0">{{ l.headers.amount }}</th>
+			<th class="border-bottom-0">{{ l.headers.captured_amount }}</th>
+			<th class="border-bottom-0">{{ l.headers.paid_amount }}</th>
+			<th class="border-bottom-0">{{ l.headers.order_lines }}</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for shipment in shipments %}
+			<tr>
+				<td>{% include "order/invoices/created_at" %}</td>
+				<td>{% include "order/invoices/remote_id" %}</td>
+				<td>{% include "order/invoices/amount" %}</td>
+				<td>{% include "order/invoices/captured_amount" %}</td>
+				<td>{% include "order/invoices/paid_amount" %}</td>
+				<td>{% include "order/invoices/order_lines" %}</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>
