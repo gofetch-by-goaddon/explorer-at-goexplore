@@ -1,7 +1,7 @@
 {% if shipment.order_lines != nil %}
 
   {% for order_line in shipment.order_lines %}
-    <p>{{ order_lines.quantity }} {{ l.pcs }} {{ order_line.variant_sku | decrypt | strip_html }}</p>
+    <p>{{ order_line.quantity }} {{ l.pcs }} {{ order_line.variant_sku | decrypt | strip_html }}</p>
   {% endfor %}
 
 {% endif %}
