@@ -3,7 +3,8 @@
 		"headers": {
 			"created_at": "PARCEL SHIPPED",
 			"courier": "COURIER",
-			"tracking_number": "TRACKING NUMBER"
+			"tracking_number": "TRACKING NUMBER",
+			"order_lines": "ORDER LINES"
 		}
 	}
 }
