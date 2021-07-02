@@ -1,10 +1,10 @@
 {
 	"en": {
 		"headers": {
-			"quantity": "PCS",
-			"product_name": "PRODUCT",
-			"price": "PRICE",
-			"variations": "VARIATIONS"
+			"quantity": "Pcs.",
+			"product_name": "Product",
+			"price": "Price",
+			"variations": "Variations"
 		}
 	}
 }
