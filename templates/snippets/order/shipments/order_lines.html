@@ -1,7 +1,13 @@
 {% if shipment.order_lines != nil %}
-
   {% for order_line in shipment.order_lines %}
-    <p>{{ order_line.quantity }} {{ l.pcs }} {{ order_line.variant_sku | decrypt | strip_html }}</p>
+    <p>
+      {{ order_line.quantity }} {{ l.pcs }}
+      {% assign variant_name = order_line.variant_sku | decrypt | strip_html %}
+      {% if order_line.variant_id != nil %}
+        <a href="{{ 'variants__show' | path_for: id: order_line.variant_id }}">{{ variant_name }}</a>
+      {% else %}
+        {{ variant_name }}
+      {% endif %}
+    </p>
   {% endfor %}
-
 {% endif %}
