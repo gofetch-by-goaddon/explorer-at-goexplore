@@ -1,12 +1,16 @@
 {% if shipment.order_lines != nil %}
   {% for order_line in shipment.order_lines %}
+    {% include "order/order_lines/find_variant_and_product" %}
     <p>
       {{ order_line.quantity }} {{ l.pcs }}
-      {% assign variant_name = order_line.variant_sku | decrypt | strip_html %}
-      {% if order_line.variant_id != nil %}
-        <a href="{{ 'variants__show' | path_for: id: order_line.variant_id }}">{{ variant_name }}</a>
+      {% if product != nil %}
+        <a href="{{ 'products__show' | path_for: id: product._id }}">{{ product.name | decrypt | strip_html }}</a>
+      {% endif %}
+
+      {% if variant != nil %}
+        <a href="{{ 'variants__show' | path_for: id: variant._id }}">{{ variant.sku | decrypt | strip_html }}</a>
       {% else %}
-        {{ variant_name }}
+        {{ order_line.variant_sku | decrypt | strip_html }}
       {% endif %}
     </p>
   {% endfor %}

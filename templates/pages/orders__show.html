@@ -31,11 +31,21 @@
 	{% assign order_lines_query 	= "order_lines" | db_find: company_id: account._id, order_id: order._id %}
 	{% assign order_lines 				= order_lines_query.results %}
 
-	{% if order_lines.size > 0 %}
+	{% if order_lines.size > 0 or shipments.size > 0 %}
 		{% assign variant_ids = "" %}
 		{% for order_line in order_lines %}
 			{% if order_line.variant_id != nil %}
 				{% capture variant_ids %}{{ variant_ids }} {{ order_line.variant_id }}{% endcapture %}
+			{% endif %}
+		{% endfor %}
+
+		{% for shipment in shipments %}
+			{% if shipment.order_lines != nil %}
+				{% for order_line in shipment.order_lines %}
+					{% if order_line.variant_id != nil %}
+						{% capture variant_ids %}{{ variant_ids }} {{ order_line.variant_id }}{% endcapture %}
+					{% endif %}
+				{% endfor %}
 			{% endif %}
 		{% endfor %}
 
