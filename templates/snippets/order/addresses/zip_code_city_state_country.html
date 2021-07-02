@@ -7,7 +7,7 @@
 			{% if field_name == "city" %}
 				{% capture zip_code_city_state %}{{ zip_code_city_state }} {% endcapture %}
 			{% elsif field_name == "state" %}
-				{% capture zip_code_city_state %}{{ zip_code_city_state }}, {% endcapture %}
+				{% capture zip_code_city_state %}{{ zip_code_city_state }} · {% endcapture %}
 			{% endif %}
 		{% endif %}
 		{% capture zip_code_city_state %}{{ zip_code_city_state }} {{ order[field] | decrypt | strip_html }}{% endcapture %}
@@ -19,7 +19,7 @@
 	{% assign country = countries[country_id] %}
 	{% if country != nil %}
 		{% if zip_code_city_state != "" %}
-			{% capture zip_code_city_state %}{{ zip_code_city_state }}, {% endcapture %}
+			{% capture zip_code_city_state %}{{ zip_code_city_state }} · {% endcapture %}
 		{% endif %}
 		{% capture zip_code_city_state %}{{ zip_code_city_state | strip_html }} <a href="{{ 'countries__show' | path_for: id: country._id }}">{{ country.name | strip_html }}</a>{% endcapture %}
 	{% endif %}
