@@ -4,7 +4,7 @@
     <p>
       {{ order_line.quantity }} {{ l.pcs }}
       {% if product != nil %}
-        <a href="{{ 'products__show' | path_for: id: product._id }}">{{ product.name | decrypt | strip_html }}</a>
+        <a href="{{ 'products__show' | path_for: id: product._id }}">{{ product.name | decrypt | strip_html }}</a>,
       {% endif %}
 
       {% if variant != nil %}
