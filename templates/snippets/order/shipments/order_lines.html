@@ -8,7 +8,7 @@
       {% endif %}
 
       {% if variant != nil %}
-        <a href="{{ 'variants__show' | path_for: id: variant._id }}">{{ variant.sku | decrypt | strip_html }}</a>
+        {% include "order/order_lines/variant_variations" %}
       {% else %}
         {{ order_line.variant_sku | decrypt | strip_html }}
       {% endif %}
