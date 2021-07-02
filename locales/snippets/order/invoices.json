@@ -1,7 +1,7 @@
 {
 	"en": {
 		"headers": {
-			"created_at": "Parcel shipped",
+			"created_at": "Invoice created",
 			"remote_id": "ID",
 			"amount": "Amount",
 			"captured_amount": "Captured",
