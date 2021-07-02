@@ -136,6 +136,7 @@
 		},
 		"projection": {
 			"_id": 1,
+			"sku": 1,
 			"product_id": 1,
 			"variations": 1
 		}
