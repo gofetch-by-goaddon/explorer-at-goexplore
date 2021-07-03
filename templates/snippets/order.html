@@ -15,18 +15,18 @@
 	</div>
 </div>
 
-{% if shipments.size > 0 %}
-	<div class="row mt-4">
-		<div class="col-md-12">
-			{% include "order/shipments" %}
-		</div>
-	</div>
-{% endif %}
-
 {% if order_lines.size > 0 %}
 	<div class="row mt-4">
 		<div class="col-md-12">
 			{% include "order/order_lines" %}
+		</div>
+	</div>
+{% endif %}
+
+{% if shipments.size > 0 %}
+	<div class="row mt-4">
+		<div class="col-md-12">
+			{% include "order/shipments" %}
 		</div>
 	</div>
 {% endif %}
