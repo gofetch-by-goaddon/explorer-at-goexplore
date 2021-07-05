@@ -41,7 +41,8 @@
 			"price": 1,
 			"currency": 1,
 			"delivery_price": 1,
-			"payment_price": 1
+			"payment_price": 1,
+			"events": 1
 		}
 	},
 	"payment_methods": {

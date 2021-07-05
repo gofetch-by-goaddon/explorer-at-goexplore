@@ -38,3 +38,11 @@
 		</div>
 	</div>
 {% endif %}
+
+{% if order.events != nil and order.events.size > 0 %}
+	<div class="row mt-4">
+		<div class="col-md-12">
+			{% include "order/events" %}
+		</div>
+	</div>
+{% endif %}
