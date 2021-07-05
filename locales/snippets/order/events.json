@@ -2,7 +2,8 @@
   "en": {
     "headers": {
       "created_at": "Event occured",
-      "status": "Status"
+      "status": "Status",
+      "comment": "Comment"
     }
   }
 }
