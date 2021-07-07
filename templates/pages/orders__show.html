@@ -31,10 +31,13 @@
 	{% assign invoices_query 			= "invoices" | db_find: company_id: account._id, order_id: order._id %}
 	{% assign invoices 						= invoices_query.results %}
 
+	{% assign credit_notes_query 	= "credit_notes" | db_find: company_id: account._id, order_id: order._id %}
+	{% assign credit_notes 				= credit_notes_query.results %}
+
 	{% assign order_lines_query 	= "order_lines" | db_find: company_id: account._id, order_id: order._id %}
 	{% assign order_lines 				= order_lines_query.results %}
 
-	{% if order_lines.size > 0 or shipments.size > 0 or invoices.size > 0 %}
+	{% if order_lines.size > 0 or shipments.size > 0 or invoices.size > 0 or credit_notes.size > 0 %}
 		{% assign variant_ids = "" %}
 		{% for order_line in order_lines %}
 			{% if order_line.variant_id != nil %}
@@ -55,6 +58,16 @@
 		{% for invoice in invoices %}
 			{% if invoice.order_lines != nil %}
 				{% for order_line in invoice.order_lines %}
+					{% if order_line.variant_id != nil %}
+						{% capture variant_ids %}{{ variant_ids }} {{ order_line.variant_id }}{% endcapture %}
+					{% endif %}
+				{% endfor %}
+			{% endif %}
+		{% endfor %}
+
+		{% for credit_note in credit_notes %}
+			{% if credit_note.order_lines != nil %}
+				{% for order_line in credit_note.order_lines %}
 					{% if order_line.variant_id != nil %}
 						{% capture variant_ids %}{{ variant_ids }} {{ order_line.variant_id }}{% endcapture %}
 					{% endif %}

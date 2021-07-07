@@ -130,6 +130,26 @@
 			"created_at": 1
 		}
 	},
+	"credit_notes": {
+		"klass": "credit_notes",
+		"query": {
+			"company_id": "{{ company_id }}",
+			"order_id": "{{ order_id }}"
+		},
+		"projection": {
+			"_id": 1,
+			"order_id": 1,
+			"remote_id": 1,
+			"amount": 1,
+			"refunded_amount": 1,
+			"returned_amount": 1,
+			"created_at": 1,
+			"order_lines": 1
+		},
+		"sort": {
+			"created_at": 1
+		}
+	},
 	"order_lines": {
 		"klass": "order_lines",
 		"query": {
